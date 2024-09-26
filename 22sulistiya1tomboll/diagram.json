@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 87, "left": 76.2, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -51.6, "left": 99.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": 106.6,
+      "left": -24.8,
+      "rotate": 90,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -5.65,
+      "left": 124.8,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -51.6,
+      "left": 291.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -51.6,
+      "left": 195.8,
+      "attrs": { "color": "cyan" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": -5.65,
+      "left": 336,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": -5.65,
+      "left": 240,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 187.2,
+      "left": -48.55,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "led3:A", "r3:1", "green", [ "v9.6", "h0" ] ],
+    [ "led2:A", "r2:1", "green", [ "v0" ] ],
+    [ "r1:2", "uno:4", "limegreen", [ "v67.2", "h-1.2" ] ],
+    [ "r3:2", "uno:3", "limegreen", [ "v67.2", "h18" ] ],
+    [ "r2:2", "uno:2", "limegreen", [ "v67.2", "h-87.6" ] ],
+    [ "led2:C", "led3:C", "white", [ "v0", "h-76.4", "v-38.4", "h-28.8", "v38.4" ] ],
+    [ "led3:C", "led1:C", "white", [ "v0", "h-76.4", "v-38.4", "h-28.8", "v38.4" ] ],
+    [ "led1:C", "uno:GND.1", "white", [ "v86.4", "h77.2" ] ],
+    [ "btn1:2.r", "r4:1", "orange", [ "v32.8", "h3.6" ] ],
+    [ "r4:2", "uno:GND.2", "orange", [ "h0", "v27.6", "h268.8" ] ],
+    [ "btn1:1.l", "uno:5V", "orange", [ "v-6.4", "h61.6", "v144", "h182.4" ] ],
+    [ "btn1:2.l", "uno:8", "orange", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
